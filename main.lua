@@ -189,7 +189,7 @@ function svfx_from_entity(e,typ)
     local p =  player:get_position()
     local delta = pos - p
     local level = world:get_level()
-    if svfx_modulo < 21 and not level:coord_see_entity( pos, player) then
+    if svfx_modulo < 21 and not level:coord_see_coord( p, pos) then
         svfx_modulo = svfx_modulo + 1
         p.x = p.x + svfx_modulo%3-1
         p.y = p.y + math.floor(svfx_modulo/3)%3-1
